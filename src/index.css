@@ -1,13 +1,158 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* From uiverse.io */
+
+.h3 {
+  font-family: inherit, "Times New Roman", Times, serif;
+}
+button {
+  font-size: 17px;
+  font-family: inherit;
+  font-weight: 700;
+  padding: 4px;
+  border-radius: 20px;
+  border: none;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 213, 0, 1) 0%,
+    rgba(255, 213, 0, 1) 47%,
+    rgba(0, 91, 187, 1) 47%,
+    rgba(0, 91, 187, 1) 100%
+  );
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button .button-content {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 0.7em 1.5em;
+  padding-left: 1.2em;
+  border-radius: 16px;
+}
+
+button svg {
+  width: 22px;
+  height: 22px;
+  margin-right: 6px;
+  color: #ff0000;
+  transition: transform 0.3s;
+}
+
+button:hover svg {
+  transform: scale(1.2);
+}
+
+/* //dark light */
+.love {
+  margin: 32px;
+  height: 39px;
+}
+.love-heart:before,
+#switch {
+  display: none;
+}
+
+.love-heart,
+.love-heart::after {
+  border-color: hsl(231deg 28% 86%);
+  border: 1px solid;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 10px;
+  height: 8px;
+  border-bottom: 0;
+}
+
+.round {
+  position: absolute;
+  z-index: 1;
+  width: 8px;
+  height: 8px;
+  background: hsl(0deg 0% 100%);
+  box-shadow: rgb(0 0 0 / 24%) 0px 0px 4px 0px;
+  border-radius: 100%;
+  left: 0px;
+  bottom: -1px;
+  transition: all 0.5s ease;
+  animation: check-animation2 0.5s forwards;
+}
+
+input:checked + label .round {
+  transform: translate(0px, 0px);
+  animation: check-animation 0.5s forwards;
+  background-color: hsl(0deg 0% 100%);
+}
+
+@keyframes check-animation {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(0px, 7px);
+  }
+
+  100% {
+    transform: translate(7px, 7px);
+  }
+}
+
+@keyframes check-animation2 {
+  0% {
+    transform: translate(7px, 7px);
+  }
+
+  50% {
+    transform: translate(0px, 7px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.love-heart {
+  box-sizing: border-box;
+  position: relative;
+  transform: rotate(-45deg) translate(-50%, -33px) scale(4);
+  /* display: block; */
+  border-color: hsl(231deg 28% 86%);
+  cursor: pointer;
+  top: 10px;
+}
+
+input:checked + .love-heart,
+input:checked + .love-heart::after,
+input:checked + .love-heart .bottom {
+  border-color: hsl(347deg 81% 61%);
+  box-shadow: inset 6px -5px 0px 2px hsl(347deg 99% 72%);
+}
+
+.love-heart::after,
+.love-heart .bottom {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  border-color: hsl(231deg 28% 86%);
+}
+
+.love-heart::after {
+  right: -9px;
+  transform: rotate(90deg);
+  top: 7px;
+}
+
+.love-heart .bottom {
+  width: 11px;
+  height: 11px;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  border-color: hsl(231deg 28% 86%);
+  left: -1px;
+  top: 5px;
+  border-radius: 0px 0px 0px 5px;
 }
